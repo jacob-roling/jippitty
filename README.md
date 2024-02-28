@@ -46,9 +46,9 @@ You say: ^C
 Thank your for using JippiTTY, goodbye.
 ```
 
-## Conversation Storage
+## Your Conversation Data
 
-Conversations are stored in a folder named .jippitty in your system's home folder.
+Conversations are stored in a folder `.jippitty` in your system's home folder.
 
 - For mac and linux users that is `$HOME/.jippitty`
 - For windows users that is `$USERPROFILE/.jippitty`
