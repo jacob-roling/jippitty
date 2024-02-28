@@ -11,6 +11,7 @@ go install github.com/jacob-roling/JippiTTY
 ## Usage
 
 ```sh
+OPENAI_API_KEY=[Your OpenAI API Key]
 jippitty [global options] command [command options]
 ```
 
