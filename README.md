@@ -49,8 +49,9 @@ Thank your for using JippiTTY, goodbye.
 ## Conversation Storage
 
 Conversations are stored in a folder named .jippitty in your system's home folder.
-For mac and linux users that is `$HOME/.jippitty`
-For windows users that is `$USERPROFILE/.jippitty`
+
+- For mac and linux users that is `$HOME/.jippitty`
+- For windows users that is `$USERPROFILE/.jippitty`
 
 Each conversation is stored as a JSON file in the format of an OpenAI message list that you might send in a response body to <https://api.openai.com/v1/chat/completions>
 
