@@ -46,6 +46,19 @@ You say: ^C
 Thank your for using JippiTTY, goodbye.
 ```
 
+```sh
+jippitty list
+poetry
+homework
+video game idea
+
+jippitty delete poetry
+
+jippitty list
+homework
+video game idea
+```
+
 ## Your Conversation Data
 
 Conversations are stored in a folder `.jippitty` in your system's home folder.
