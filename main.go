@@ -347,7 +347,19 @@ func main() {
 				Name:  "delete",
 				Usage: "Delete a/all conversation(s)",
 				Action: func(ctx *cli.Context) error {
-					fmt.Println("added task: ", ctx.Args().First())
+					if ctx.Args().Len() < 1 {
+						fmt.Println("Please include the name of the conversation you wish to delete")
+						return nil
+					}
+
+					file_path := os.Getenv("HOME") + "/.jippitty/" + strings.Join(ctx.Args().Slice(), " ") + ".json"
+
+					err = os.Remove(file_path)
+
+					if err != nil {
+						log.Fatal(err)
+					}
+
 					return nil
 				},
 			},
