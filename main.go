@@ -52,7 +52,7 @@ func converse(file *os.File, conversation Conversation, api_key string) {
 	client := http.Client{}
 
 	for {
-		fmt.Print("You say: ")
+		fmt.Print("\nYou say: ")
 
 		var content string
 
@@ -154,7 +154,7 @@ func main() {
 		if err := file.Close(); err != nil {
 			log.Fatal(err)
 		}
-		fmt.Println("\nThank your for using jippitty, goodbye.")
+		fmt.Println("\n\nThank your for using JippiTTY, goodbye.")
 		os.Exit(0)
 	}()
 
@@ -224,6 +224,8 @@ func main() {
 
 					file_path := os.Getenv("HOME") + "/.jippitty/" + strings.Join(ctx.Args().Slice(), " ") + ".json"
 
+					file, err = os.OpenFile(file_path, os.O_RDWR, fs.ModePerm)
+
 					var conversation Conversation
 
 					if os.IsNotExist(err) {
@@ -260,12 +262,6 @@ func main() {
 						converse(file, conversation, OPENAI_API_KEY)
 
 						return nil
-					}
-
-					file, err = os.OpenFile(file_path, os.O_RDWR, fs.ModePerm)
-
-					if err != nil {
-						log.Fatal(err)
 					}
 
 					defer file.Close()
