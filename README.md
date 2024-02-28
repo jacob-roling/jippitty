@@ -54,7 +54,11 @@ For windows users that is $USERPROFILE/.jippitty
 
 Each conversation is stored as a JSON file in the format of an OpenAI message list that you might send in a response body to <https://api.openai.com/v1/chat/completions>
 
-For example $HOME/.jippitty/world series.json:
+For example:
+
+```sh
+FILE: $HOME/.jippitty/world series.json
+```
 
 ```JSON
 {
