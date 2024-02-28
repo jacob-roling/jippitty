@@ -57,7 +57,7 @@ Each conversation is stored as a JSON file in the format of an OpenAI message li
 For example:
 
 ```sh
-FILE: $HOME/.jippitty/world series.json
+File: $HOME/.jippitty/world series.json
 ```
 
 ```JSON
