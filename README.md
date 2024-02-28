@@ -1,5 +1,21 @@
 # JippiTTY
 
+A Teletypewriter (TTY) for ChatGPT
+
+## Installation
+
+```sh
+go install github.com/jacob-roling/JippiTTY
+```
+
+## Usage
+
+```sh
+jippitty [global options] command [command options]
+```
+
+## Manual
+
 ```sh
 NAME:
    jippitty - A Teletypewriter (TTY) for ChatGPT
