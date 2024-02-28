@@ -58,10 +58,6 @@ Each conversation is stored as a JSON file in the format of an OpenAI message li
 For example:
 `File: <your system's home>/.jippitty/<conversation name>.json`
 
-```sh
-File: $HOME/.jippitty/world series.json
-```
-
 ```JSON
 {
     "model": "gpt-3.5-turbo",
