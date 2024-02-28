@@ -1,6 +1,6 @@
 # JippiTTY
 
-A Teletypewriter (TTY) for ChatGPT
+JippiTTY is a Teletypewriter (TTY) for ChatGPT hence the name, a combination of 'Jippi' for 'GP' in 'ChatGPT' and 'tty', the abbreviation of Teletypewriter.
 
 ## Installation
 
@@ -24,7 +24,7 @@ USAGE:
    jippitty [global options] command [command options]
 
 DESCRIPTION:
-   jippitty is a Teletypewriter (TTY) for ChatGPT hence the name, a combination of 'jippi' for the 'GP' in 'ChatGPT' and 'tty' the abbreviation of Teletypewriter.
+   JippiTTY is a Teletypewriter (TTY) for ChatGPT hence the name, a combination of 'Jippi' for 'GP' in 'ChatGPT' and 'tty', the abbreviation of Teletypewriter.
 
 COMMANDS:
    list     List all conversations

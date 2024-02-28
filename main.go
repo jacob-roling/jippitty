@@ -169,7 +169,7 @@ func main() {
 	app := &cli.App{
 		Name:        "jippitty",
 		Usage:       "A Teletypewriter (TTY) for ChatGPT",
-		Description: "jippitty is a Teletypewriter (TTY) for ChatGPT hence the name, a combination of 'jippi' for the 'GP' in 'ChatGPT' and 'tty' the abbreviation of Teletypewriter.",
+		Description: "JippiTTY is a Teletypewriter (TTY) for ChatGPT hence the name, a combination of 'Jippi' for 'GP' in 'ChatGPT' and 'tty', the abbreviation of Teletypewriter.",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:    "key",
