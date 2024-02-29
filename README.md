@@ -59,14 +59,14 @@ homework
 video game idea
 ```
 
-## Your Conversation Data
+## Conversations
 
 Conversations are stored in a folder `.jippitty` in your system's home folder.
 
 - For mac and linux users that is `$HOME/.jippitty`
 - For windows users that is `$USERPROFILE/.jippitty`
 
-Each conversation is stored as a JSON file in the format of an OpenAI message list that you might send in a response body to <https://api.openai.com/v1/chat/completions>
+Each conversation is stored as a JSON file in the format of an OpenAI message list that you might send in a request body to <https://api.openai.com/v1/chat/completions>. Essentially, this program enables you to edit and pass these files to the OpenAI API from your command line.
 
 For example:
 `File: <your system's home>/.jippitty/<conversation name>.json`
