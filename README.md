@@ -114,7 +114,7 @@ COMMANDS:
    list     List all conversations
    new      Start a new conversation
    join     Join a conversation
-   delete   Delete a/all conversation(s)
+   delete   Delete a conversation
    help, h  Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:

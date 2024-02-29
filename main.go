@@ -345,7 +345,7 @@ func main() {
 			},
 			{
 				Name:  "delete",
-				Usage: "Delete a/all conversation(s)",
+				Usage: "Delete a conversation",
 				Action: func(ctx *cli.Context) error {
 					if ctx.Args().Len() < 1 {
 						fmt.Println("Please include the name of the conversation you wish to delete")
