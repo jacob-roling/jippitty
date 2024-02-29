@@ -10,6 +10,9 @@ go install github.com/jacob-roling/jippitty
 
 ## Usage
 
+> JippiTTY supports multiline messages therefore pressing `Enter` inserts a new line.
+> Press `Enter` a second time to send the message.
+
 ```sh
 OPENAI_API_KEY=*Your OpenAI API Key*
 
