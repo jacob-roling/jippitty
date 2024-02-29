@@ -95,7 +95,7 @@ For example:
 }
 ```
 
-## Manual
+## TL;DR
 
 ```sh
 NAME:
