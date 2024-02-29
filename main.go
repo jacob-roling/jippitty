@@ -13,6 +13,7 @@ import (
 	"os"
 	"os/signal"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"syscall"
 
@@ -35,16 +36,6 @@ type Conversation struct {
 type Message struct {
 	Role    string `json:"role"`
 	Content string `json:"content"`
-}
-
-func ensureHome() error {
-	_, err := os.Stat(os.Getenv("HOME") + "/.jippitty")
-	if os.IsNotExist(err) {
-		if err := os.MkdirAll(os.Getenv("HOME")+"/.jippitty", os.ModePerm); err != nil {
-			return err
-		}
-	}
-	return nil
 }
 
 func converse(file *os.File, conversation Conversation, api_key string) {
@@ -145,6 +136,14 @@ const OPENAI_API_URL string = "https://api.openai.com/v1"
 
 func main() {
 	var file *os.File
+	var home_path string
+
+	if runtime.GOOS == "windows" {
+		home_path = os.Getenv("USERPROFILE") + "/.jippitty"
+	} else {
+		home_path = os.Getenv("HOME") + "/.jippitty"
+	}
+
 	c := make(chan os.Signal, 1)
 
 	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
@@ -160,10 +159,12 @@ func main() {
 
 	var model string
 
-	err := ensureHome()
+	_, err := os.Stat(home_path)
 
-	if err != nil {
-		log.Fatal(err)
+	if os.IsNotExist(err) {
+		if err := os.MkdirAll(home_path, os.ModePerm); err != nil {
+			log.Fatal(err)
+		}
 	}
 
 	app := &cli.App{
@@ -191,7 +192,7 @@ func main() {
 				Name:  "list",
 				Usage: "List all conversations",
 				Action: func(ctx *cli.Context) error {
-					entries, err := os.ReadDir(os.Getenv("HOME") + "/.jippitty/")
+					entries, err := os.ReadDir(home_path)
 
 					if err != nil {
 						log.Fatal(err)
@@ -222,7 +223,7 @@ func main() {
 						return nil
 					}
 
-					file_path := os.Getenv("HOME") + "/.jippitty/" + strings.Join(ctx.Args().Slice(), " ") + ".json"
+					file_path := home_path + "/" + strings.Join(ctx.Args().Slice(), " ") + ".json"
 
 					file, err = os.OpenFile(file_path, os.O_RDWR, fs.ModePerm)
 
@@ -294,7 +295,7 @@ func main() {
 						return nil
 					}
 
-					file_path := os.Getenv("HOME") + "/.jippitty/" + strings.Join(ctx.Args().Slice(), " ") + ".json"
+					file_path := home_path + "/" + strings.Join(ctx.Args().Slice(), " ") + ".json"
 
 					var conversation Conversation
 
@@ -352,7 +353,7 @@ func main() {
 						return nil
 					}
 
-					file_path := os.Getenv("HOME") + "/.jippitty/" + strings.Join(ctx.Args().Slice(), " ") + ".json"
+					file_path := home_path + "/" + strings.Join(ctx.Args().Slice(), " ") + ".json"
 
 					err = os.Remove(file_path)
 
