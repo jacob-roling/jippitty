@@ -5,7 +5,7 @@ JippiTTY is a Teletypewriter (TTY) for ChatGPT hence the name, a combination of 
 ## Installation
 
 ```sh
-go install github.com/jacob-roling/JippiTTY
+go install github.com/jacob-roling/jippitty
 ```
 
 ## Usage
